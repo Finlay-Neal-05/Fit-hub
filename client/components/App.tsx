@@ -16,6 +16,7 @@ function App() {
           <Link className="navButton" to={`/stats`}>
             Stats
           </Link>
+          {/* make a change */}
         </div>
       </div>
     </>
