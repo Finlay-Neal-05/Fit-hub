@@ -6,11 +6,11 @@ function Home() {
   return (
     <>
       <div className="header">
-        <h2>Welcome username!</h2>
-        <p>{currDate}</p>
         <Link className="add-btn" to={`/log-workout`}>
           +
         </Link>
+        <h2>Welcome username!</h2>
+        <p>{currDate}</p>
       </div>
       <PreviousWorkout />
       <PreviousWorkout />
