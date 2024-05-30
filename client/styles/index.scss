@@ -31,6 +31,10 @@ body {
   border-radius: 20px;
 }
 
+.header {
+  position: relative;
+}
+
 .previous-workout {
   outline: 5px;
   border: solid;
@@ -43,8 +47,16 @@ body {
 }
 
 .add-btn {
-  border-radius: 100%;
-  border: solid;
-  // padding: 1em;
-  font-size: 3em;
+  position: absolute;
+  right: 5%;
+  top: 0.4em;
+  text-decoration: none;
+  border-radius: 50%;
+  border: solid 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  font-size: 2.5em;
 }
