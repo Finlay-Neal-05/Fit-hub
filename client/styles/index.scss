@@ -1,6 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
-html, 
+html,
 body {
   font-family: 'Montserrat', sans-serif;
+  height: 100%;
+}
+
+// .app {
+//   // display: flex;
+//   // flex-direction: column;
+//   // position: relative;
+//   // height: 100vh;
+// }
+
+.navbar {
+  display: flex;
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+}
+
+.navButton {
+  text-decoration: none;
+  text-align: center;
+  padding: 1.5em 1.5em;
+  background-color: rgb(191, 146, 255);
+  color: black;
+  border-radius: 20px;
+}
+
+.header {
+  position: relative;
+}
+
+.previous-workout {
+  outline: 5px;
+  border: solid;
+  border-color: black;
+  border-radius: 20px;
+  width: 90%;
+  height: 5em;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.add-btn {
+  position: absolute;
+  right: 5%;
+  top: 0.4em;
+  text-decoration: none;
+  border-radius: 50%;
+  border: solid 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  font-size: 2.5em;
 }
