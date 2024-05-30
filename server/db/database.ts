@@ -1,5 +1,5 @@
 import connection from './connection.ts'
-import { User } from '../../models/User.ts'
+import { User, UserData } from '../../models/User.ts'
 import { Workout } from '../../models/Workouts.ts'
 
 export async function getAllUsers(): Promise<User[]> {
@@ -15,6 +15,10 @@ export async function getUserWorkoutsById(id: number): Promise<Workout[]> {
   const res = await connection('workouts').where('workouts.user_id', id)
   console.log(res)
   return res
+}
+
+export async function createNewUser(user: UserData): Promise<void> {
+  return await connection('users').insert({...user})
 }
 
 // getUserWorkoutsById(1)
