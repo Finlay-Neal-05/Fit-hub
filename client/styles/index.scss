@@ -4,6 +4,8 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 // .app {
@@ -20,6 +22,8 @@ body {
   width: 100%;
   justify-content: center;
   gap: 10px;
+  background-color: aquamarine;
+  margin: 0;
 }
 
 .navButton {
@@ -36,6 +40,7 @@ body {
 }
 
 .previous-workout {
+  position: relative;
   outline: 5px;
   border: solid;
   border-color: black;
@@ -59,4 +64,28 @@ body {
   width: 1em;
   height: 1em;
   font-size: 2.5em;
+}
+
+.prev-workout-name {
+  margin: 0 0 0 0.25em;
+}
+.prev-workout-date {
+  margin: 0 0 0 0.75em;
+  font-size: 0.85em;
+}
+.prev-workout-time {
+  margin: 0;
+  position: absolute;
+  right: 0.25em;
+  top: 0.25em;
+  font-size: 0.85em;
+}
+.prev-workout-exercises {
+  margin: 0;
+  position: relative;
+  left: 4em;
+  bottom: 1.5em;
+}
+.prev-workout-exercises li {
+  list-style-type: none;
 }
