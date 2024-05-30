@@ -1,6 +1,7 @@
 import connection from './connection.ts'
 import { User, UserData } from '../../models/User.ts'
 import { Workout } from '../../models/Workouts.ts'
+import { WorkoutLog } from '../../models/WorkoutLog.ts'
 
 export async function getAllUsers(): Promise<User[]> {
   return await connection('users').select()
@@ -21,4 +22,9 @@ export async function createNewUser(user: UserData): Promise<void> {
   return await connection('users').insert({...user})
 }
 
-// getUserWorkoutsById(1)
+export async function logWorkout(log?: WorkoutLog): Promise<void> {
+  const res = await connection('workouts')
+  .join('sets', 'sets.workout_id', 'workouts.id')
+  .join('exercises', 'sets.exercise_id', 'exercises.id')
+  console.log(res)
+}
