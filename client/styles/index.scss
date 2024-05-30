@@ -14,9 +14,21 @@ body {
 // }
 
 .navbar {
+  display: flex;
   position: absolute;
   bottom: 5px;
   width: 100%;
+  justify-content: center;
+  gap: 10px;
+}
+
+.navButton {
+  text-decoration: none;
+  text-align: center;
+  padding: 1.5em 1.5em;
+  background-color: rgb(191, 146, 255);
+  color: black;
+  border-radius: 20px;
 }
 
 .previous-workout {

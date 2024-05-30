@@ -1,10 +1,11 @@
 import PreviousWorkout from '../components/PreviousWorkout'
 
 function Home() {
+  const currDate = new Date().toDateString()
   return (
     <>
-      <h2>Home</h2>
-
+      <h2>Welcome username!</h2>
+      <p>{currDate}</p>
       <PreviousWorkout />
       <PreviousWorkout />
       <PreviousWorkout />
