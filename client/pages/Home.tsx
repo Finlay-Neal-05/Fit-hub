@@ -1,11 +1,15 @@
 import PreviousWorkout from '../components/PreviousWorkout'
+import { Link } from 'react-router-dom'
 
 function Home() {
   const currDate = new Date().toDateString()
   return (
     <>
-      <h2>Welcome username!</h2>
-      <p>{currDate}</p>
+      <div className="header">
+        <h2>Welcome username!</h2>
+        <p>{currDate}</p>
+        <Link to={`/log-workout`}>+</Link>
+      </div>
       <PreviousWorkout />
       <PreviousWorkout />
       <PreviousWorkout />
