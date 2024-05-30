@@ -10,7 +10,7 @@ export async function up() {
     table.string('name')
     table.string('password')
   })
-}
+};
 
 /**
  * @param { import("knex").Knex } knex
