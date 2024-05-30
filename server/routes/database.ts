@@ -16,6 +16,17 @@ router.get('/getallusers', async (req, res) => {
   }
 })
 
+router.get('/getworkoutsbyid/:id', async (req,res) => {
+  try {
+    const id = Number(req.params.id)
+    const data = await db.getUserWorkoutsById(id)
+
+    res.json(data)
+  } catch {
+    throw new Error
+  }
+})
+
 router.post('/createuser', async (req,res) => {
   try {
     const user: UserData = req.body.user
