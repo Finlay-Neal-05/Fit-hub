@@ -11,5 +11,7 @@ export async function getUserById(id: number): Promise<User> {
 }
 
 export async function getUserWorkoutsById(id: number): Promise<Workout[]> {
-  return connection('workouts').join('users', 'workouts.user_id', 'users.id').where({id})
+  const response = connection('workouts').join('users', 'workouts.user_id', 'users.id').where({id})
+  console.log(response)
+  return response
 }
