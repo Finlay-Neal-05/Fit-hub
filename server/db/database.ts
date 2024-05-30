@@ -26,7 +26,7 @@ export async function createNewUser(user: UserData): Promise<void> {
 export async function logWorkout(log: WorkoutLog): Promise<void> {
   const { workout, sets, exercises, } = log
   const workout_id: number = await logWorkoutReturnId(workout)
-  const exerciseIds: number[] = await getExerciseId(exercises)
+  const exerciseIds: number[] = await getExerciseIds(exercises)
   console.log(exerciseIds)
   sets.map(set => set.workout_id = workout_id[0])
   console.log(sets)
@@ -39,7 +39,7 @@ async function logWorkoutReturnId (workout: WorkoutData): Promise<number> {
   return await connection('workouts').insert(workout)
 }
 
-async function getExerciseId(exercises: ExerciseData[]): Promise<number[]> {
+async function getExerciseIds(exercises: ExerciseData[]): Promise<number[]> {
   const res = await connection('exercises').insert(exercises)
   const newArray: number[] = []
   for (let i = res[0]; i > (res[0] - exercises.length); i--) {

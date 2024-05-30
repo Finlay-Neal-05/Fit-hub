@@ -2,6 +2,7 @@ import { Router } from 'express'
 
 import * as db from '../db/database.ts'
 import { UserData } from '../../models/User.ts'
+import { WorkoutLog } from '../../models/WorkoutLog.ts'
 
 const router = Router()
 
@@ -38,6 +39,16 @@ router.post('/createuser', async (req,res) => {
 
   } catch (error) {
     res.status(500).json({ message: 'Something went wrong' })
+  }
+})
+
+router.post('/logworkout', async (req,res) => {
+  try {
+    const log: WorkoutLog = req.body.log
+    await db.logWorkout(log)
+  } catch {
+    console.error('something went wrong when logging workout')
+    return res.status(400).json({ message: 'Error logging data' })
   }
 })
 
