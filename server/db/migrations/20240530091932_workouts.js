@@ -1,26 +1,13 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-
-import knex from "knex";
-export const up = function(knex) {
+export function up(knex) {
   return knex.schema.createTable('workouts', (table) => {
-    table.increments('id')
+    table.increments('id').primary()
     table.integer('user_id')
     table.string('workout_name')
     table.string('date')
     table.boolean('is_shared')
   })
-  
-};
+}
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-export async function down() {
+export function down(knex) {
   return knex.schema.dropTable('workouts')
 }
-  
-};

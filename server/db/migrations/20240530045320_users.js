@@ -1,21 +1,11 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-import knex from "knex"
-
-export async function up() {
+export function up(knex) {
   return knex.schema.createTable('users', (table) => {
-    table.increments('id')
+    table.increments('id').primary()
     table.string('name')
     table.string('password')
   })
-};
+}
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-export async function down() {
+export function down(knex) {
   return knex.schema.dropTable('users')
 }

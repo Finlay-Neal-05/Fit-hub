@@ -1,11 +1,14 @@
-export async function seed(knex) {
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> } 
+ */
+export const seed = async function(knex) {
   // Deletes ALL existing entries
-  await knex('fruit').del()
-
-  // Inserts seed entries
-  await knex('fruit').insert([
-    { id: 1, name: 'banana' },
-    { id: 2, name: 'apple' },
-    { id: 3, name: 'feijoa' },
-  ])
-}
+  await knex('users').del()
+  await knex('users').insert([
+    {name: 'Shane', password: '123'},
+    {name: 'Andrew', password: '123'},
+    {name: 'Tasman', password: '123'},
+    {name: 'Finlay', password: '123'},
+  ]);
+};
