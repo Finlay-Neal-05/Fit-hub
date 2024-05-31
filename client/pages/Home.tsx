@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 // get the data from the backend with the workoutData
 
+// /api/v1/users/getworkoutsbyid/:id
+
 function Home() {
   const currDate = new Date().toDateString()
   return (
