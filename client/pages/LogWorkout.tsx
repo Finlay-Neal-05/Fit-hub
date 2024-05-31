@@ -22,10 +22,14 @@ export function EditWorkoutForm() {
   const logWorkout = useLogWorkout()
   const navigate = useNavigate()
 
+  const date = new Date()
+  const day = date.getDate()
+  const month = date.getMonth()
+
   const [formState, setFormState] = useState<WorkoutData>({
     user_id: 1,
     workout_name: '',
-    date: '',
+    date: `${day}/${month}`,
     is_shared: false,
   })
 
