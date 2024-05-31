@@ -1,5 +1,5 @@
 export interface WorkoutData {
-  user_id: number
+  user_id?: number
   workout_name: string
   date: string
   is_shared: boolean
