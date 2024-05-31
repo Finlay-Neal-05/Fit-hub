@@ -29,7 +29,7 @@ export function EditWorkoutForm() {
   const [formState, setFormState] = useState<WorkoutData>({
     user_id: 1,
     workout_name: '',
-    date: `${day}/${month}`,
+    date: `${day}/${month + 1}`,
     is_shared: false,
   })
 
