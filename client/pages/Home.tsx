@@ -1,10 +1,7 @@
 import PreviousWorkout from '../components/PreviousWorkout'
 import { Link } from 'react-router-dom'
 import useWorkouts from '../hooks/useWorkouts'
-
-// get the data from the backend with the workoutData
-
-// /api/v1/users/getworkoutsbyid/:id
+import { Workout } from '../../models/Workouts'
 
 function Home() {
   const { data, isError, isLoading, error } = useWorkouts(1)
@@ -21,8 +18,6 @@ function Home() {
     return <p>Failed {String(error)}</p>
   }
 
-  console.log(data)
-
   const currDate = new Date().toDateString()
   return (
     <>
@@ -33,7 +28,7 @@ function Home() {
         <h2>Welcome username!</h2>
         <p>{currDate}</p>
       </div>
-      {data.map((workout) => {
+      {data.map((workout: Workout) => {
         return (
           <PreviousWorkout
             key={workout.id}
