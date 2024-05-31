@@ -147,6 +147,7 @@ const [exercisesArr, setExercisesArr] = useState<ExerciseData[]>([])
         <div className="form-input">
           <label htmlFor="workout_name">workout name:</label>
           <input
+            className="logField"
             value={formState.workout_name}
             onChange={handleChange}
             type="text"
@@ -162,6 +163,7 @@ const [exercisesArr, setExercisesArr] = useState<ExerciseData[]>([])
           <div className="form-input">
             <label htmlFor="reps">reps:</label>
             <input
+              className="logField"
               value={setsForm.reps}
               onChange={handleSetChange}
               type="text"
@@ -171,6 +173,7 @@ const [exercisesArr, setExercisesArr] = useState<ExerciseData[]>([])
           <div className="form-input">
             <label htmlFor="weight">weight:</label>
             <input
+              className="logField"
               value={setsForm.weight}
               onChange={handleSetChange}
               type="text"
@@ -180,6 +183,7 @@ const [exercisesArr, setExercisesArr] = useState<ExerciseData[]>([])
           <div className="form-input">
             <label htmlFor="time">time:</label>
             <input
+              className="logField"
               value={setsForm.time}
               onChange={handleSetChange}
               type="text"
@@ -189,6 +193,7 @@ const [exercisesArr, setExercisesArr] = useState<ExerciseData[]>([])
           <div className="form-input">
             <label htmlFor="exerciseName">Exercise name:</label>
             <input
+              className="logField"
               value={setsForm.exerciseName}
               onChange={handleSetChange}
               type="text"
@@ -198,6 +203,7 @@ const [exercisesArr, setExercisesArr] = useState<ExerciseData[]>([])
           <div className="form-input">
             <label htmlFor="exerciseType">Exercise type:</label>
             <input
+              className="logField"
               value={setsForm.exerciseType}
               onChange={handleSetChange}
               type="text"
@@ -207,6 +213,7 @@ const [exercisesArr, setExercisesArr] = useState<ExerciseData[]>([])
           <div className="form-input">
             <label htmlFor="muscleGroup">Muscle group:</label>
             <input
+              className="logField"
               value={setsForm.muscleGroup}
               onChange={handleSetChange}
               type="text"

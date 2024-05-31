@@ -48,6 +48,7 @@ router.post('/logworkout', async (req, res) => {
     const log: WorkoutLog = req.body
     console.log(req.body)
     await db.logWorkout(log)
+    return res.status(201).json({ message: 'Workout logged successfully' })
   } catch {
     console.error('something went wrong when logging workout')
     return res.status(400).json({ message: 'Error logging data' })
