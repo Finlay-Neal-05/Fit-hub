@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import { WorkoutLog } from '../../models/WorkoutLog'
 import { SetData } from '../../models/Set'
 import { WorkoutData } from '../../models/Workouts'
-import { Exercise } from '../../models/Exercise'
+import { Exercise, ExerciseData } from '../../models/Exercise'
 import { Set } from '../../models/Set'
 
 // interface Props extends WorkoutLog {
@@ -35,8 +35,8 @@ const [setsForm, setSetsForm] = useState({
 
 })
 
-const [setsArr, setSetArr] = useState<Set[]>([])
-const [exercisesArr, setExercisesArr] = useState<Exercise[]>([])
+const [setsArr, setSetArr] = useState<SetData[]>([])
+const [exercisesArr, setExercisesArr] = useState<ExerciseData[]>([])
 
   const [hasWorkout, setHasWorkout] = useState(false)
   
@@ -72,9 +72,11 @@ const [exercisesArr, setExercisesArr] = useState<Exercise[]>([])
   const handleAddSet = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
 
-    const formData = new FormData(evt.currentTarget)
-    const payload = Object.fromEntries(formData)
-
+    //const { reps, time, weight, exerciseName, exerciseType, muscleGroup } = setsForm
+    const newSet: SetData = {reps: setsForm.reps, time: setsForm.reps, weight: setsForm.weight}
+    const newExercise: ExerciseData = {name: setsForm.exerciseName, type: setsForm.exerciseType, muscle_group: setsForm.muscleGroup}
+    setSetArr([...setsArr, newSet])
+    setExercisesArr([...exercisesArr, newExercise])
     console.log(setsForm) // THIS IS NOT A STATE, THIS IS THE FORM REGARDING SETS!!!!!
   }
 
