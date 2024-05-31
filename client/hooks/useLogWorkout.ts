@@ -6,10 +6,12 @@ export default function useLogWorkout() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (log: WorkoutLog) => {
+      console.log(log)
       await request.post(`/api/v1/users/logworkout`).send(log)
     },
     onSuccess: async () => {
-      queryClient.invalidateQueries({ queryKey: ['workouts', 1] }) // 1 should be id
+      queryClient.invalidateQueries({ queryKey: ['workouts', 1] })
+       // 1 should be id
     },
   })
 }

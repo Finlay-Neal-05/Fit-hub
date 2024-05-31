@@ -45,7 +45,8 @@ router.post('/createuser', async (req, res) => {
 
 router.post('/logworkout', async (req, res) => {
   try {
-    const log: WorkoutLog = req.body.log
+    const log: WorkoutLog = req.body
+    console.log(req.body)
     await db.logWorkout(log)
   } catch {
     console.error('something went wrong when logging workout')

@@ -4,6 +4,14 @@ import { SetData } from '../../models/Set'
 import { WorkoutData } from '../../models/Workouts'
 import { Exercise, ExerciseData } from '../../models/Exercise'
 import { Set } from '../../models/Set'
+// IMPORT
+import { useNavigate } from 'react-router-dom'
+import useLogWorkout from '../hooks/useLogWorkout'
+// INSIDE LOGWORKOUT PAGE
+
+
+// INSIDE HANDLE FINAL SUBMIT(log: WorkoutLog)
+
 
 // interface Props extends WorkoutLog {
 //   submitLabel: string
@@ -11,6 +19,8 @@ import { Set } from '../../models/Set'
 // }
 
 export function EditWorkoutForm() {
+  const logWorkout = useLogWorkout()
+  const navigate = useNavigate()
 
   const [formState, setFormState] = useState<WorkoutData>({
     user_id: 1,
@@ -92,6 +102,14 @@ const [exercisesArr, setExercisesArr] = useState<ExerciseData[]>([])
     // const formData = new FormData(e.currentTarget)
     // const payload = Object.fromEntries(formData)
     console.log(log.workout)
+  }
+
+  const finalSubmit = async () => {
+    const payload: WorkoutLog = {workout: log.workout, sets: setsArr, exercises: exercisesArr}
+    await logWorkout.mutateAsync({...payload})
+    navigate(`/`)
+
+
   }
 
   const user_info_id = 1
@@ -193,6 +211,7 @@ const [exercisesArr, setExercisesArr] = useState<ExerciseData[]>([])
           </div>
         <button type="submit">add set</button>
       </form>
+      <button onClick={finalSubmit}>Finish Workout</button>
     </>
       )
       }
