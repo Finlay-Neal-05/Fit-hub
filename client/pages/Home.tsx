@@ -33,10 +33,15 @@ function Home() {
         <h2>Welcome username!</h2>
         <p>{currDate}</p>
       </div>
-      {/* map over workoutt data to generate PreviousWorkouts */}
-      <PreviousWorkout />
-      <PreviousWorkout />
-      <PreviousWorkout />
+      {data.map((workout) => {
+        return (
+          <PreviousWorkout
+            key={workout.id}
+            workoutName={workout.workout_name}
+            date={workout.date}
+          />
+        )
+      })}
     </>
   )
 }

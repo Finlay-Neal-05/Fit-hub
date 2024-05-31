@@ -1,10 +1,15 @@
-function PreviousWorkout() {
+interface Props {
+  date: string
+  workoutName: string
+}
+
+function PreviousWorkout(props: Props) {
   // genereate previousWOrkout based on the data received
 
   return (
     <div className="previous-workout">
-      <h3 className="prev-workout-name">Name</h3>
-      <p className="prev-workout-date">31/05</p>
+      <h3 className="prev-workout-name">{props.workoutName}</h3>
+      <p className="prev-workout-date">{props.date}</p>
       <p className="prev-workout-time">75 mins</p>
       <ul className="prev-workout-exercises">
         <li>lat pulldowns - 20kg</li>
